@@ -1,0 +1,13 @@
+[Unit]
+Description=MQTT Subscriber
+After=network.target
+
+[Service]
+Type=simple
+User=nobody
+Group=nobody
+#RemainAfterExit=yes
+ExecStart=/opt/mqtt_sub/start_sub
+Restart=always
+[Install]
+WantedBy=multi-user.target
