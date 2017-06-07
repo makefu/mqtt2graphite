@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 import paho.mqtt.client as mqtt
 from datetime import datetime
-graphite_host='heidi.shack'
+import sys
+graphite_host=sys.argv[1] if len(sys.argv) > 1 else 'localhost'
+
 db = {}
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code " + str(rc))
